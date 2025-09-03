@@ -72,3 +72,52 @@ Ab table empty ho gaya aur space bhi free ho gayi.
 Agar ab INSERT karogi toh ID phir se 1 se start hogi.
 
 Yeh dikhaata hai ki truncate puri memory reset kar deta hai
+#### 35. What is Normalization?
+Normalization is the process of organizing data in a database to reduce redundancy and avoid inconsistency. It involves creating separate tables for different entities and linking them through relationships, which makes the data structured and flexible
+#### 36. What is Denormalization?
+Denormalization is the process of intentionally adding redundancy to a normalized database to improve query performance. It reduces the number of joins needed, making queries faster, though some data may be repeated
+
+Explanation
+35. Normalization
+
+Normalization ka matlab hai data ko efficiently organize karna.
+
+Iska goal hai:
+
+Redundancy (duplicate data) kam karna
+
+Data inconsistency (conflicting data) avoid karna
+
+Ye tab hota hai jab hum tables ko tod ke logically connect karte hain aur unke beech relationships define karte hain.
+
+Example (Simple):
+
+Pehle: Ek table me student ke naam + address + course + teacher ka naam hai.
+
+Problem: Agar ek teacher multiple students ko padha raha hai, toh teacher ka naam bar-bar repeat hoga → redundancy.
+
+Solution (Normalization): Teacher ko alag table me rakho aur student table me teacher_id se link karo.
+
+Ab data organized aur consistent hai.
+
+💡 Analogy:
+
+Normalization = Kapdon ko almirah me fold karke alag alag shelves me rakhna, taki dhundhna easy ho aur duplicate na ho.
+
+36. Denormalization
+
+Denormalization ka matlab hai thoda redundant data intentionally rakhna, taki queries fast ho jaye.
+
+Jab normalized tables me data bahut tod diya jaata hai, queries join karne me slow ho sakti hain.
+
+Denormalization me kuch tables ko merge karke ya duplicate info rakh kar performance improve karte hain.
+
+Example (Simple):
+
+Normalized: Student table + Teacher table (linked by teacher_id)
+
+Denormalized: Student table me teacher name bhi directly store kar do → queries fast, lekin teacher ka naam duplicate ho sakta hai.
+
+💡 Analogy:
+
+Denormalization = Almirah me frequently used kapde ek hi jagah rakhna, thoda duplicate ho sakta hai, lekin nikalna fast ho jaata hai.
