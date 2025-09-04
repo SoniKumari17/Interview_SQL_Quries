@@ -59,3 +59,8 @@ LEFT JOIN UnitsSold u
    AND u.purchase_date BETWEEN p.start_date AND p.end_date
 GROUP BY p.product_id;
 ```
+### Number Of Unique Subjetcs Taught By Each Teacher
+```sql
+select teacher_id,count(distinct subject_id) as cnt from Teacher
+group by teacher_id;
+```
